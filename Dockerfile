@@ -2,6 +2,6 @@ FROM alpine:latest
 
 RUN apk add --no-cache socat
 
-EXPOSE 8080/tcp
+# EXPOSE ${TCPPROXY_LISTEN_PORT}/tcp remember to run with --expose ${TCPPROXY_LISTEN_PORT}
 
-CMD ["sh", "-c", "socat -d -d TCP-LISTEN:8080,fork TCP:${HOST}:${PORT}"]
+CMD ["sh", "-c", "socat -d -d TCP-LISTEN:${TCPPROXY_LISTEN_PORT},fork TCP:${TCPPROXY_HOST}:${TCPPROXY_PORT}"]
