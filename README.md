@@ -13,4 +13,4 @@ Usage example:
 docker run -p 80:80 -e TCPPROXY_LISTEN_PORT=80 -e TCPPROXY_HOST=webserver -e TCPPROXY_PORT=8080
 ```
 
-will redirect all incoming connections on TCP port `8080` to host `webserver` port `8080`
+will redirect all incoming connections on TCP port `80` to host `webserver` port `8080`
